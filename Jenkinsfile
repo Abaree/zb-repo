@@ -3,7 +3,7 @@ pipeline{
 	stages{
 		stage('1-git clone'){
 			steps{
-				git checkout
+				checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[]]])
 				stage('1-memory check'){
 					steps{
 						steps{
