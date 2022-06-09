@@ -5,11 +5,11 @@ pipeline{
 			steps{
 				checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[]]])
 				stage('1-memory check'){
-					steps{
+					
 						steps{
 							sh 'free -m'
 						}
-					}
+				
 				}
 			}
 		}
